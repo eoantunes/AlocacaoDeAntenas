@@ -270,6 +270,7 @@ for j in range (0,N):
   ct.SetCoefficient(Y[j], 1)
   head += 1
 
+  
 
 ###################
 # Função objetivo #
@@ -282,6 +283,9 @@ objetivo.SetMaximization()
 
 solver.Solve()
 depois = time.time()
+
+
+
 #################################
 # Imprimindo a solução no shell #
 #################################
