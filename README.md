@@ -10,3 +10,5 @@ Inicialmente o problema foi modelado matematicamente e implementado no sover ORT
 Foi criado um Data Set para testes e avaliações.
 
 A última etapa foi a elaboração de uma interface gráfica que facilitasse a operação desta ferramenta.
+
+Mais detalhes podem ser obtidos no artigo disponível para visualização em: https://pt.overleaf.com/read/qgshxwkmhtdt
