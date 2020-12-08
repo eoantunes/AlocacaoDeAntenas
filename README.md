@@ -7,7 +7,9 @@ Este trabalho trata do problema de alocação de estações rádio base (ERBs) d
 
 Inicialmente o problema foi modelado matematicamente e implementado no sover ORTools.
 
-Foi criado um Data Set para testes e avaliações.
+Foi criado um Data Set para testes e avaliações:
+    ---> 200 pontos de demanda: https://www.google.com/maps/d/u/2/edit?mid=1BZZA8-3ENd-8RyV27ySG6BTBSx3n7zpW&usp=sharing
+    ---> 50 possíveis posições das antenas: arquivo KMZ
 
 A última etapa foi a elaboração de uma interface gráfica que facilitasse a operação desta ferramenta.
 
