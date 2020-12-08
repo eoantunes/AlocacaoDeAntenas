@@ -1,5 +1,5 @@
 # AlocacaoDeAntenas
-Projeto da disciplina de Algoritmo e Estruturas de Dados
+Projeto da disciplina de Algoritmo e Estruturas de Dados - PPCA/UnB
 
 O problema de alocação dos nós de acesso do CCOp Mv consiste em selecionar, dentro de uma região limitada à área de atuação da tropa terrestre, as posições das viaturas de antenas que maximizam a área de cobertura dos seus sistemas de comunicação. 
 
