@@ -2,27 +2,32 @@ from ortools.linear_solver import pywraplp
 import numpy as np
 import time
 
-# Vamos declarar o solver considerando o Google's Linear Optimization
+# Declaração do solver OTools considerando a biblioteca CBC do Google
 solver = pywraplp.Solver("AlgoritmoExato", pywraplp.Solver.CBC_MIXED_INTEGER_PROGRAMMING)
 
+# registro do momento do início do processamento
 antes = time.time()
+
 ##################
 # Parametrização #
 ##################
-M = 200 # Nr de pontos de demanda
-N = 50 # Nr de possíveis locais de antenas
-A = 6 # Nr máximo de antenas
-U = 50 # Nr máximo de usuários associados a uma antena
 
-# Benefício ou peso pela cobertura de cada ponto de demanda (i = 0,1,2,...,M-1)
-P = np.ones(M)
+M = 200 # Nr de pontos de demanda (Valor definido no Data Set)
+N = 50 # Nr de possíveis locais de antenas (Valor definido no Data Set)
+A = 9 # Nr máximo de antenas (No CCOp Mv o número máximo é 9 = 8 Vtr Nó de acesso + 1 Centro de Coordenação)
+U = 50 # Nr máximo de usuários associados a uma antena (cálculo demonstrado no artigo)
+P = np.ones(M) # Benefício ou peso pela cobertura de cada ponto de demanda (i = 0,1,2,...,M-1)
 
-# Por enquanto a matriz de conexões irá sem montada manualmente, posteriormente, por meio do cálculo das distâncias de cada nó e do alcance das antenas
-'''
-C = np.random.randint(0,2,size=(M,N))
-#C = np.maximum( C, C.transpose() )
-#C = np.maximum( C, np.identity(M, dtype=int) )
-'''
+# Por enquanto a matriz de conexões foi montada manualmente, fazendo-se uso do simulador de enlaces da empresa Ubiquiti (disponível em: https://link.ui.com).
+# Os parâmetros para definição deste data set foram:
+# - Altura da antena em relação ao solo 5m
+# - Potência de transmissão 10dbm
+# - Frequência de operação 5GHz
+# - Banda de operação 40MHz
+# O que resultou num raio de alcance de aproximadamente 1200m
+# Posteriormente a matriz será populada por mineração dos dados junto ao Google Maps (após o deploy da interface gráfica), por meio do cálculo das distâncias de cada nó,
+# dos cálculos para definição da visada direta (considerando-se também a 1ª zona de Fresnel), do alcance das antenas, da taxa SNR e da taxa de degradação pelo caminho.
+
 C=[[1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0],
   [1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0],
   [1,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0],
@@ -252,14 +257,14 @@ for i in range(0,M):
   for j in range (0,N):
     ct.SetCoefficient(Y[j], int(C[i][j]) ) # É a matriz de Conectividade como coeficiente que irá garantir que J' é um subconjunto de J em que J' = {jEJ|dij<=S}
 
-# Restrição (Nova): Número de usuários por antena deve ser menor ou igual a 50
+# Restrição (2): Número de usuários por antena deve ser menor ou igual a 50
 for j in range(0,N):
   ct = solver.Constraint(0, U, str(head))
   head += 1
   for i in range (0,M):
     ct.SetCoefficient(X[i], int(C[i][j]) )
 
-# Restrição (2): Somatório (jEJ) yj <= A
+# Restrição (3): Somatório (jEJ) yj <= A
 ct = solver.Constraint(1, A, str(head))
 for j in range (0,N):
   ct.SetCoefficient(Y[j], 1)
@@ -276,16 +281,13 @@ for i in range(0,M):
 objetivo.SetMaximization()
 
 solver.Solve()
-
-
 depois = time.time()
-########################
-# Imprimindo a solução #
-########################
-print()
+#################################
+# Imprimindo a solução no shell #
+#################################
+
 print('Valor objetivo =', objetivo.Value())
 print()
-'''
 print('Pontos de demanda atendidos:')
 Xstrmatrix = '[ '
 for i in range(0,M):
@@ -293,7 +295,6 @@ for i in range(0,M):
 Xstrmatrix +=']\n'
 print(Xstrmatrix)
 print()
-'''
 print('Antenas instaladas em:')
 Ystrmatrix = '[ '
 for j in range(0,N):
