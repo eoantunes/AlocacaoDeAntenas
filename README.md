@@ -13,6 +13,7 @@ Foi criado um Data Set para testes e avaliações:
 	
 	---> 50 possíveis posições das antenas: arquivo KMZ
 
-A última etapa foi a elaboração de uma interface gráfica que facilitasse a operação desta ferramenta.
+A última etapa foi a elaboração de uma interface gráfica em Django que facilitasse a operação desta ferramenta.
+Esta etapa contou com a integração da biblioteca folium, GeoPy e do algoritmo de otmização apresentado em main.py. A aplicação foi incorporada ao framework Django, conforme arquivos em ProjetoDjango.
 
 Mais detalhes podem ser obtidos no artigo disponível para visualização em: https://pt.overleaf.com/read/qgshxwkmhtdt
