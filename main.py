@@ -1,3 +1,9 @@
+#######################################################################
+#  Arquivo contendo o principal processamento do aplicativo           #
+#  É aqui que é implementado a otimização do problema de localização  #
+#  Estas funcionalidades serão incorporadas à View do Django          #
+#######################################################################
+
 from ortools.linear_solver import pywraplp
 import numpy as np
 import time
