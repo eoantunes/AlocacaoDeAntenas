@@ -1,5 +1,5 @@
 # AlocacaoDeAntenas
-Projeto da disciplina de Algoritmo e Estruturas de Dados - PPCA/UnB - 2020
+Projeto desenvolvido no curso de metrado profissional e vinculado ao Projeto CCOp Mv do Exército Brasileiro - PPCA/UnB - 2020
 
 O problema de alocação dos nós de acesso do CCOp Mv consiste em selecionar, dentro de uma região limitada à área de atuação da tropa terrestre, as posições das viaturas de antenas que maximizam a área de cobertura dos seus sistemas de comunicação. 
 
@@ -16,4 +16,4 @@ Foi criado um Data Set para testes e avaliações:
 A última etapa foi a elaboração de uma interface gráfica em Django que facilitasse a operação desta ferramenta.
 Esta etapa contou com a integração da biblioteca folium, GeoPy e do algoritmo de otmização apresentado em main.py. A aplicação foi incorporada ao framework Django, conforme arquivos em /ProjetoDjango/AlocAntenas.
 
-Mais detalhes podem ser obtidos no artigo disponível para visualização em: https://pt.overleaf.com/read/qgshxwkmhtdt
+Mais detalhes podem ser obtidos nos artigos disponíveis para visualização em: https://pt.overleaf.com/read/qgshxwkmhtdt e https://www.overleaf.com/read/wrtvtyzkrdvz.
