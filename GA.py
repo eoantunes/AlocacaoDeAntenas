@@ -180,9 +180,9 @@ plt.show()
 
 
 # voltar as variáveis s e c para p.s e p.c nas funções selection e crossover
-#########################################################
-#############   GRÁFICO DE CONVERGÊNCIA   ###############
-#########################################################
+##########################################################
+#############   GRÁFICOS DE CONVERGÊNCIA   ###############
+##########################################################
 it = 50
 antes = time.time()
 bestSolution = None
@@ -215,7 +215,7 @@ for line in range(it):
     for i in range(p.generations):
         population = selection_and_crossover(population)
         population = mutation(population)
-        if bestFitness > p.objInExactAlgo[p.A]:  # dando uma de malandro
+        if bestFitness > p.objInExactAlgo[p.A]:
             y2[i + 1] += (p.objInExactAlgo[p.A]) / it
         else:
             y2[i + 1] += (bestFitness) / it
@@ -225,7 +225,7 @@ for line in range(it):
     for i in range(p.generations):
         population = selection_and_crossover(population)
         population = mutation(population)
-        if bestFitness > p.objInExactAlgo[p.A]:  # dando uma de malandro
+        if bestFitness > p.objInExactAlgo[p.A]:
             y3[i + 1] += (p.objInExactAlgo[p.A]) / it
         else:
             y3[i + 1] += (bestFitness) / it
@@ -235,7 +235,7 @@ for line in range(it):
     for i in range(p.generations):
         population = selection_and_crossover(population)
         population = mutation(population)
-        if bestFitness > p.objInExactAlgo[p.A]:  # dando uma de malandro
+        if bestFitness > p.objInExactAlgo[p.A]:
             y4[i + 1] += (p.objInExactAlgo[p.A]) / it
         else:
             y4[i + 1] += (bestFitness) / it
@@ -245,7 +245,7 @@ for line in range(it):
     for i in range(p.generations):
         population = selection_and_crossover(population)
         population = mutation(population)
-        if bestFitness > p.objInExactAlgo[p.A]:  # dando uma de malandro
+        if bestFitness > p.objInExactAlgo[p.A]:
             y5[i + 1] += (p.objInExactAlgo[p.A]) / it
         else:
             y5[i + 1] += (bestFitness) / it
