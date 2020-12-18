@@ -16,4 +16,6 @@ Foi criado um Data Set para testes e avaliações:
 A última etapa foi a elaboração de uma interface gráfica em Django que facilitasse a operação desta ferramenta.
 Esta etapa contou com a integração da biblioteca folium, GeoPy e do algoritmo de otmização apresentado em main.py. A aplicação foi incorporada ao framework Django, conforme arquivos em /ProjetoDjango/AlocAntenas.
 
+Também foi desenvolvido um algoritmo genético para melhorar o desempenho do algoritmo exato e seus detalhes podem ser visualizados no segundo artigo abaixo referenciado.
+
 Mais detalhes podem ser obtidos nos artigos disponíveis para visualização em: https://pt.overleaf.com/read/qgshxwkmhtdt e https://www.overleaf.com/read/wrtvtyzkrdvz.
