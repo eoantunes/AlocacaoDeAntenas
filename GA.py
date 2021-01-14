@@ -253,7 +253,7 @@ for line in range(it):
 
 
 
-#####   IMPRESSÃO   #####
+#####    IMPRESSÃO    #####
 print("Número de Antenas: {}".format(p.A))
 print("Melhor Solução: {}".format(bestSolution))
 print("Valor Objetivo: {}".format(bestFitness))
