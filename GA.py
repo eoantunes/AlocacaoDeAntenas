@@ -13,6 +13,7 @@ def individual():
     individual = [0] * p.individual_size
     for i in vetorAux:
         individual[i] = 1
+
     return individual
 
 def create_population():
@@ -183,7 +184,7 @@ plt.show()
 ##########################################################
 #############   GRÁFICOS DE CONVERGÊNCIA   ###############
 ##########################################################
-it = 1000
+it = 100
 antes = time.time()
 bestSolution = None
 bestFitness = 0
@@ -198,6 +199,7 @@ y6 = [0] * (p.generations+1)
 for line in range(it):
     ########   1 EXECUÇÃO   ########
     #     population_size, crossover_probability, mutation_probability, elitism_rate, parents
+    print(f"Interação: {line}")
     parents = 1
     population = create_population()
     for i in range(p.generations):

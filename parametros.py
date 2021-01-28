@@ -226,7 +226,7 @@ objInExactAlgo = [0, 50, 100, 136, 159, 176, 179, 179, 179, 179]
 # Parâmetros exclusivos do Algorítmo Genético
 individual_size = N
 
-population_size = 10
+population_size = 100
 crossover_probability = 0.8
 mutation_probability = 0.2
 elitism_rate = 0.1            # % dos indivíduos mais adaptados da população que serão mantidos para a próxima geração sem sofrer crossover e mutação
@@ -234,9 +234,42 @@ generations = 100
 parents = 4                   # Número de pais a serem selecionados
 
 
-s = 1
-selec = ['roulette', 'truncation']
-c = 0
-cross = ['one-point', 'two-point']
+# s = 1
+# selec = ['roulette', 'truncation']
+# c = 0
+# cross = ['one-point', 'two-point']
+
+# The attribures
+
+"""
+parent_selection_type options
+
+sss (for steady-state selection), 
+rws (for roulette wheel selection), 
+sus (for stochastic universal selection), 
+rank (for rank selection), <- (truncation)
+random (for random selection), 
+and tournament (for tournament selection)
+"""
+parent_selection_type = "rank"
+
+"""
+crossover_type options
+
+Type of the crossover operation. Supported types are single_point (for single-point crossover),
+two_points (for two points crossover), 
+uniform (for uniform crossover), 
+and scattered (for scattered crossover).
+"""
+crossover_type = "two_points"
+
+"""
+Type of the mutation operation. Supported types are random (for random mutation), 
+swap (for swap mutation), 
+inversion (for inversion mutation), 
+scramble (for scramble mutation), 
+and adaptive (for adaptive mutation).
+"""
+mutation_type = "random" 
 
 elitism = int(population_size * elitism_rate)   # Nr de indivíduos que serão selecionados para a próxima geração sem sofrer crossover nem mutação
