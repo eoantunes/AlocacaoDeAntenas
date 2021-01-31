@@ -14,7 +14,7 @@ Foi criado um Data Set para testes e avaliações:
 	---> 50 possíveis posições das antenas: arquivo KMZ
 
 A última etapa foi a elaboração de uma interface gráfica em Django que facilitasse a operação desta ferramenta.
-Esta etapa contou com a integração da biblioteca folium, GeoPy e do algoritmo de otmização apresentado em main.py. A aplicação foi incorporada ao framework Django, conforme arquivos em /ProjetoDjango/AlocAntenas.
+Esta etapa contou com a integração da biblioteca folium, GeoPy e do algoritmo de otmização apresentado em exato.py. A aplicação foi incorporada ao framework Django, conforme arquivos em /ProjetoDjango/AlocAntenas.
 
 Também foi desenvolvido um algoritmo genético para melhorar o desempenho do algoritmo exato e seus detalhes podem ser visualizados no segundo artigo abaixo referenciado.
 
