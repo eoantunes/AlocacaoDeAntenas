@@ -84,7 +84,7 @@ def callback_generation(ga_instance):
 for i in range(1, len(['k', 'r', 'c', 'g', 'm'])+1):
     i_global = i
     ga_instance = pygad.GA(num_generations=p.generations,
-                           num_parents_mating=p.elitism,
+                           num_parents_mating=p.parents,
                            fitness_func=fitness,
                            initial_population=create_population(),
                            num_genes=p.N,
